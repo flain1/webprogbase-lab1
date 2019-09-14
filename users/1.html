@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>tric music | users</title>
+<meta name="description" content="tric music">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<meta name="author" content="Igor Anikieiev">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style>
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900|Raleway:400,500,600&display=swap&subset=cyrillic');
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.jumbotron {
+  /**background-image: url("images/header.jpg");**/
+  /**background-color: #FEF6E3;**/
+  -webkit-animation: jumbotron 2s linear infinite alternate both;
+          animation: jumbotron 2s linear infinite alternate both;
+  background-size: cover;
+  height: 93vh;
+}
+
+.color-change-2x {
+        -webkit-animation: jumbotron 2s linear infinite alternate both;
+                animation: jumbotron 2s linear infinite alternate both;
+}
+
+@-webkit-keyframes jumbotron {
+  0% {
+    background: #FFD3D0;
+  }
+  100% {
+    background: #FEF6E3;
+  }
+}
+@keyframes jumbotron {
+  0% {
+    background: #FFD3D0;
+  }
+  100% {
+    background: #FEF6E3;
+  }
+}
+
+.container {
+font-family: "Montserrat";
+font-size: 15pt;
+font-weight: 600;
+}
+
+.jumbotron h1 {
+
+  font-family: "Montserrat";
+  font-size: 400pt;
+  font-weight: 900;
+  color: #F94F40;
+}
+
+.jumbotron h3 {
+
+  font-family: "Montserrat";
+  font-size: 15pt;
+  font-weight: 700;
+  color: #ffa7a0;
+}
+
+body {
+  font-size: 28px;
+  background-color: #FEF6E3;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  float: left;
+}
+
+#navigation-container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 70px;
+}
+
+.navigation-bar {
+  background-color: #352d2f;
+  height: 70px;
+  width: 100%;
+  text-align:center;
+}
+.navigation-bar img{
+float:left;
+}
+.navigation-bar ul {
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  display:inline-block;
+  vertical-align:top;
+}
+
+.navigation-bar li {
+  list-style-type: none;
+  padding: 0px;
+  height: 24px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  display: inline;
+}
+
+.navigation-bar li a {
+  color: black;
+  font-size: 16px;
+  font-family: "Montserrat";
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 70px;
+  padding: 5px 15px;
+  opacity: 0.7;
+}
+
+#menu {
+  float: right;
+}
+
+.tracking-in-expand {
+        -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+                animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -10em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -10em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.content {
+margin-top: 5%;
+}
+
+#content_page
+{
+display: flex; justify-content: center;
+flex-direction: column;
+align-items: center;
+margin-top: 5%;
+margin: 0 auto;
+}
+
+.upic {
+float: left;
+padding: 5px;
+
+background: white;
+display: block;
+}
+
+.info {
+
+text-align: left;
+padding: 5px;
+background: white;s
+}
+
+.content table {
+margin-top:10px
+}
+
+.user_info {
+margin: auto;
+overflow: auto;
+width: 70%;
+opacity:0.8;
+background: white;
+padding: 10px;
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+<div class="navigation-bar">
+
+  <div id="navigation-container">
+
+    <img src="../logo.png" width="8%">
+
+    <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../users.html">Users</a></li>
+    <li><a href="../songs.html">Songs</a></li>
+    <li><a href="../about.html">About</a></li>
+
+    </ul>
+  </div>
+  </div>
+
+
+<div class="content" >
+<div class="user_info">
+    <div class="upic">
+    <img src="../images/user1.jpg" width='300px' height='300px'>
+    </div>
+    <div class="info"></div>
+    <h1>GuyFiery</h1>
+    <p>ID: 092734
+    <br>date: 09/43/2019</p>
+    <p class = "bio">
+Hello. I got a really good and non-mainstream music taste. I listen to Billie Rubbish and xxxtentacion. e-girls hmu.
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+</div>
+
+
+
+
+</div>
+
+</html>
